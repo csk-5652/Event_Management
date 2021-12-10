@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block head %}{% endblock head %}
+{% block title %}{% endblock title %}
+
+{% block body %}
+
+ <div class="table-container">
+            <h1 class="heading"> Booking</h1>
+            
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Booking_Id</th>
+                  <th>Event</th>
+                  <th>Name</th>
+                  <th>Date&Time</th>
+                  <th>Fees</th>
+                  <th>conform</th>
+                  <th>Action</th>
+                </tr>
+              </thead> 
+              <tbody>
+              {% for booking in allbooking %}
+                <tr>
+                  <td data-label="Booking_Id">{{booking.id}}</td>
+                  <td data-label="Event">{{booking.Booking_event}}</td>
+                  <td data-label="Name">{{booking.Your_name}}</td>
+                  <td data-label="Date&Time">{{booking.Date_created}}</td>
+                  <td data-label="Fees">{{booking.Register_fees}}</td>
+                  <td data-label="conform"><a href="https://pmny.in/dIZoFNei1DCF" class="btn">Pay online</a></td>
+                  <td data-label="Action"><form action="{% url 'delete_booking' booking.id %}" method="POST">
+                    {% csrf_token %}
+                  <input  class="btn" type="submit" value="delete">
+                  </form></td>
+            
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+            
+          </div>
+ 
+
+
+{% endblock body %}
+ 
+
+{% comment %} {% for booking in allbooking %}
+{{booking.id}}
+{{booking.Booking_username}}
+{{booking.Booking_event}}
+{{booking.Your_name}}
+{{booking.Your_phone}}
+{{booking.Date_created}}
+
+<form action="{% url 'delete_booking' booking.id %}" method="POST">
+{% csrf_token %}
+<input type="submit" value="delete">
+</form>
+
+<br>
+
+
+{% endfor %}  {% endcomment %}

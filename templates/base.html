@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% static 'css/based.css' %}" rel="stylesheet"> 
+    
+    <title>{% block title %}{% endblock title %}</title>
+    {% block head %}{% endblock head %}
+</head>
+<body style="background-image:url({% static '' %})">
+
+    <header class="header">
+        <nav class="navbar">
+            <a href="#" class="nav-logo">Eventila</a>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="/" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'eventsview' %}" class="nav-link">Events</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'booking' %}" class="nav-link">Booking</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'news' %}" class="nav-link">News</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'profile' %}" class="nav-link">Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a onclick="logout_func()" href="{% url 'logoutUser' %}" class="nav-link">Logout</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+    <!-- main  -->
+
+{% block body %}
+
+{% endblock body %}
+ 
+
+<script src="{% static 'js/base.js' %}"></script>
+<script src="{% static 'js/msg.js' %}"></script>
+<script src="{% static 'js/index.js' %}"></script>
+</body>
+</html>
+

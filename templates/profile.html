@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+{% block title %}{% endblock title %}
+<link href="{% static 'css/profile.css' %}" rel="stylesheet"> 
+{% endblock head %}
+
+{% block body %}
+<div class="container-profile">
+<h2>Profile</h2>
+<hr>
+<h3>Username:- <span>{{user}}</span></h3>
+<h3>Email Id:- <span>{{user.email}}</span></h3>
+<h3>First name:- <span>{{user.first_name}}</span></h3>
+<h3>Last name:- <span>{{user.last_name}}</span></h3>
+<h3>Date joined:- <span>{{user.date_joined}}</span></h3>
+<h3>Last joined:- <span>{{user.last_login}}</span></h3>
+<br>
+<br>
+<button class="btn"><a href="{% url 'edit_profile' %}">Edit Profile</a></button>
+</div>
+{% endblock body %}

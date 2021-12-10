@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block head %}
+<link href="{% static 'css/index.css' %}" rel="stylesheet"> 
+{% endblock head %}
+
+{% block title %}Home{% endblock title %}
+
+
+{% block body %}
+
+<!-- main  -->
+
+<div>
+<!-- <div class="firstpage" style=" background-image: url(https://images.unsplash.com/photo-1557682250-33bd709cbe85?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cHVycGxlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60); "> -->
+<div class="firstpage" style="background-image:url({% static 'images/display.jpg' %})">
+    <section class="banner-area">
+    
+        <div class=""></div>
+        <h1 id="typ" class="banner-title"></h1>
+        <h3 class="banner-title">You will Amazing Event here Lorem ipsum dolor sit <br>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, adipisci!</h3><a class="neon-btn" href="{% url 'eventsview' %}"><span></span><span></span><span></span><span></span>Explore</a>
+            </section>
+</div>
+<div class="secondpage" style="background-image:url({% static 'images/about1.jpg' %}); background-repeat: no-repeat;background-size: cover;" >
+    <section class="about-area" id="about">
+        <!-- <h3 class="section-title">About Us</h3> -->
+        <ul class="about-content">
+            <li class="about-left" style="background-image: url({% static 'images/icon/about.jpg' %}); opacity: 0.8;"></li>
+            <li class="about-right">
+                <h2>About our Company</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt iusto unde modi aspernatur amet blanditiis quibusdam ipsam. Veritatis, rerum, fuga.</p><a class="about-btn" href="">Learn more</a>
+            </li>
+        </ul>
+    </section>
+</div>
+<div class="thirdpage"  >
+    <section class="services-area" id="services">
+        <h3 class="section-title">Services</h3>
+        <ul class="services-content">
+            <li>
+                <i><img  src="{% static 'images/icon/i1.png' %}" alt=""></i>
+                <h4>Web Design</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est, reprehenderit.</p>
+            </li>
+            <li>
+                <i><img  src="{% static 'images/icon/i2.png' %}" alt=""></i>
+                <h4>Marketing</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est, reprehenderit.</p>
+            </li>
+            <li>
+                <i><img  src="{% static 'images/icon/i3.png' %}" alt=""></i>
+                <h4>Graphics</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est, reprehenderit.</p>
+            </li>
+            
+        </ul>
+    </section>
+    </div>
+    <hr style="margin-left: 5%;margin-right: 5%;">
+    <section class="contact-area" id="contact" >
+        <h3 class="section-title">Contact</h3>
+        <ul class="contact-content">
+            <li>
+                <i><img  src="{% static 'images/icon/100.jpg' %}" alt=""></i>
+                <p>247 Westwood Lane Lorem, ipsum dolor.<br>
+                Blackfen, UK</p>
+            </li>
+            <li>
+                <i><img  src="{% static 'images/icon/call.png' %}" alt=""></i>
+                <p>+123 456 789<br>
+                +789 456 123</p>
+            </li>
+            <li>
+                <i><img  src="{% static 'images/icon/email.jpg' %}" alt=""></i>
+                <p>Example123@gmail.com<br>
+                Example123@website.com</p>
+            </li>
+        </ul>
+    </section>
+    <footer>
+        <p>All Right Reserved</p>
+    </footer>
+</div>
+
+
+<script src="index.js"></script>
+
+
+
+{% endblock body %}
+
+{% comment %} {{request.user}} 
+<button><a href="{% url 'logoutUser' %}">Logout</a></button> {% endcomment %}

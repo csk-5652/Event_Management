@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+
+{% endblock head %}
+
+{% block title %}Events{% endblock title %}
+
+
+{% block body %}
+
+{% for new in allnews %}
+
+<div class="container">
+
+      <div class="grid">
+
+        <div class="grid-item">
+          <div class="card">
+            
+            <div class="card-content">
+              <h1 class="card-header">{{new.News_title}}</h1>
+              {% comment %} <img class="card-img" src="{{Event.Event_image.url}}" alt="Rome" /> {% endcomment %}
+              <p class="card-text">
+                {{new.News_desc}}
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+</div>
+{% endfor %}
+
+
+
+{% endblock body %}
+
+
+
+
+
+
+    
+    

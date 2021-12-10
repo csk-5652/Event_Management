@@ -1,0 +1,19 @@
+
+{% load static %}
+{% block head %}
+<link href="{% static 'css/edit.css' %}" rel="stylesheet"> 
+{% endblock head %}
+
+
+
+{% block body %}
+<h2>Edit Profile</h2>
+<hr>
+<form action="{% url 'edit_profile' %}" method="POST">
+{% csrf_token %}
+{{form.as_p}}
+<input class="btn" type="submit" value="update">
+<button  class="btn"> <a href="{% url 'profile' %}">Back</a></button>
+</form>
+{% endblock body %}
+

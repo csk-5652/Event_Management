@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+
+{% endblock head %}
+
+{% block title %}Events{% endblock title %}
+
+
+{% block body %}
+
+
+{% for Event in eventsview  %}
+<div class="container">
+      <div class="grid">
+
+        <div class="grid-item">
+          <div class="card">
+            <img class="card-img" src="{{Event.Event_image.url}}" alt="Rome" />
+            <div class="card-content">
+              <h1 class="card-header">{{Event.Event_name}}</h1>
+              <p class="card-text">
+              <span class="event-span">{{Event.Event_category}}</span>
+               {{Event.Event_Desc}}
+              </p>
+             <span class="event-span">Sponser:-{{Event.Event_sponsor}}</span>
+            <span class="event-span">Time&date:-{{Event.Event_datetime}}</span>
+            <span class="event-span">Venue:-{{Event.Event_venue}}</span>
+              <br>
+              <span class="event-span">Fees:-${{Event.Event_price}}</span>
+            
+              <button  class="card-btn"><a href="/bookform/{{Event.id}}">Register</a>  </button>
+            
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+</div>
+{% endfor %}
+
+{% endblock body %}
+
+
+
