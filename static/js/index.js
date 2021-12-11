@@ -6,9 +6,9 @@
 // onload
 // func for booking form 
 
-function Cancel_func(){
-    alert("Booking cancel")
-}
+// function Cancel_func(){
+//     alert("Booking cancel")
+// }
 
 function logout_func(){
     alert("You logout successfully")
