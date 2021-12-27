@@ -5,7 +5,7 @@ from ems import views
 
 urlpatterns = [
     path("", views.index,name='ems'),
-    path("/accounts/login/",views.loginUser,name='loginUser'),
+    path("/login/",views.loginUser,name='loginUser'),
     path("logout/",views.logoutUser, name="logoutUser"),
     path("register/",views.registerUser,name='registerUser'),
     path("eventsview/",views.eventsview,name='eventsview'),
